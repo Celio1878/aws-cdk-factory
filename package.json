@@ -28,6 +28,7 @@
 		"cdk": "bin/cdk.js"
 	},
 	"scripts": {
+		"build": "rm -rf dist && tsc",
 		"prepare": "npm run build",
 		"test": "jest",
 		"cdk": "cdk",
