@@ -1,0 +1,52 @@
+{
+	"name": "aws-cdk-factory",
+	"version": "0.0.1",
+	"description": "AWS CDK Factory",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"license": "MIT",
+	"keywords": [
+		"aws",
+		"cdk",
+		"factory",
+		"lambda",
+		"cloudformation",
+		"codepipeline",
+		"dynamodb"
+	],
+	"author": {
+		"name": "Celio Vieira",
+		"email": "celio1878@hotmail.com"
+	},
+	"engines": {
+		"node": ">=16.x.x"
+	},
+	"bin": {
+		"cdk": "bin/cdk.js"
+	},
+	"scripts": {
+		"prepare": "npm run build",
+		"test": "jest",
+		"cdk": "cdk",
+		"find-deadcode": "ts-prune"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.4.0",
+		"@types/node": "^14.17.5",
+		"@types/source-map-support": "^0.5.4",
+		"aws-cdk": "2.25.0",
+		"jest": "^26.6.3",
+		"ts-jest": "^26.5.6",
+		"ts-node": "^8.9.0",
+		"ts-prune": "^0.10.3",
+		"typescript": "^4.7.4"
+	},
+	"dependencies": {
+		"aws-cdk-lib": "2.25.0",
+		"constructs": "^10.1.42",
+		"source-map-support": "^0.5.16"
+	}
+}
