@@ -8,19 +8,17 @@ import { RestApi as _RestApi } from "./RestApi";
 import { ServiceStagePipelinesStack as _ServiceStagePipelinesStack } from "./ServiceStagePipelinesStack";
 import { ServiceVars as _ServiceVars } from "./ServiceVars";
 
-export namespace NodeCdkFactory {
-	export const DynamoTable = _DynamoTable;
-	export const ServiceStagePipelinesStack = _ServiceStagePipelinesStack;
-	export const IAMPolicies = _IAMPolicies;
+export const DynamoTable = _DynamoTable;
+export const ServiceStagePipelinesStack = _ServiceStagePipelinesStack;
+export const IAMPolicies = _IAMPolicies;
 
-	export function Factory(stack: Stack, service_name: string) {
-		return {
-			Lambda: _Lambda(stack, service_name),
-			LambdaEventsSubscription: _LambdaEventsSubscription(stack, service_name),
-			RestApi: _RestApi(stack, service_name),
-			ServiceVars: _ServiceVars(stack, service_name),
-			DynamoTable: (name: string, partitionKey: Attribute, props: Partial<TableProps> = {}) =>
-				_DynamoTable(stack, name, partitionKey, props),
-		};
-	}
+export function CdkFactory(stack: Stack, service_name: string) {
+	return {
+		Lambda: _Lambda(stack, service_name),
+		LambdaEventsSubscription: _LambdaEventsSubscription(stack, service_name),
+		RestApi: _RestApi(stack, service_name),
+		ServiceVars: _ServiceVars(stack, service_name),
+		DynamoTable: (name: string, partitionKey: Attribute, props: Partial<TableProps> = {}) =>
+			_DynamoTable(stack, name, partitionKey, props),
+	};
 }

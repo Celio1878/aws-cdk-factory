@@ -1,6 +1,6 @@
 {
 	"name": "aws-cdk-factory",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "AWS CDK Factory",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -23,9 +23,6 @@
 	},
 	"engines": {
 		"node": ">=16.x.x"
-	},
-	"bin": {
-		"cdk": "bin/cdk.js"
 	},
 	"scripts": {
 		"build": "rm -rf dist && tsc",
