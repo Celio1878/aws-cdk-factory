@@ -1,13 +1,13 @@
 {
 	"name": "aws-cdk-factory",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "AWS CDK Factory",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
 		"dist"
 	],
-	"license": "MIT",
+	"license": "ISC",
 	"keywords": [
 		"aws",
 		"cdk",
@@ -17,6 +17,10 @@
 		"codepipeline",
 		"dynamodb"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/celio1878/aws-cdk-factory"
+	},
 	"author": {
 		"name": "Celio Vieira",
 		"email": "celio1878@hotmail.com"
