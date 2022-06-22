@@ -1,8 +1,4 @@
-cdk.out
+.vscode
 node_modules
 dist
-build
-.env
-lib/*.d.ts
-lib/*.js
 package-lock.json
