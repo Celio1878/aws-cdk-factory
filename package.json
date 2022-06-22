@@ -1,5 +1,5 @@
 {
-	"name": "aws-cdk-factory",
+	"name": "cdk-factory",
 	"version": "0.1.0",
 	"description": "AWS CDK Factory",
 	"main": "dist/index.js",
@@ -19,7 +19,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/celio1878/aws-cdk-factory"
+		"url": "git+https://github.com/celio1878/cdk-factory"
 	},
 	"author": {
 		"name": "Celio Vieira",
