@@ -29,10 +29,10 @@
 		"node": ">=16.x.x"
 	},
 	"scripts": {
-		"build": "rm -rf dist && tsc",
-		"prepare": "npm run build",
 		"test": "jest",
 		"cdk": "cdk",
+		"build": "rm -rf dist && tsc",
+		"prepare": "npm run build",
 		"find-deadcode": "ts-prune"
 	},
 	"devDependencies": {
