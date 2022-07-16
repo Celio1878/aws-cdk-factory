@@ -49,7 +49,7 @@ export class ServiceStagePipelinesStack extends Stack {
 				phases: {
 					install: {
 						"runtime-versions": {
-							nodejs: "16.x",
+							nodejs: "14.x",
 						},
 						commands: ["cd code", "npm install"],
 					},
