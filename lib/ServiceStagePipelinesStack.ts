@@ -48,10 +48,13 @@ export class ServiceStagePipelinesStack extends Stack {
 				version: "0.2",
 				phases: {
 					install: {
+						"runtime-versions": {
+							nodejs: "16.x",
+						},
 						commands: ["cd code", "npm install"],
 					},
 					pre_build: {
-						commands: [`npm test`],
+						commands: ["npm test"],
 					},
 					build: {
 						commands: ["npm run build"],
