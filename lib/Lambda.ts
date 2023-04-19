@@ -15,7 +15,7 @@ export function Lambda(stack: Stack, service_name: string, region = "sa-east-1")
 			code: lambda_resources.code,
 			functionName,
 			handler: "handler.api",
-			runtime: lambda.Runtime.NODEJS_16_X,
+			runtime: lambda.Runtime.NODEJS_18_X,
 			description: `Function generated on: ${new Date().toISOString()}`,
 			environment: {
 				REGION: region,
