@@ -8,7 +8,7 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 const ASSETS_BUCKET = "code-asset";
 const BUILD_ENV = {
 	computeType: codebuild.ComputeType.SMALL,
-	buildImage: codebuild.LinuxBuildImage.AMAZON_LINUX_2_3,
+	buildImage: codebuild.LinuxBuildImage.AMAZON_LINUX_2_4,
 };
 
 interface Props extends StackProps {
@@ -115,7 +115,7 @@ export class ServiceStagePipelinesStack extends Stack {
 								version: "0.2",
 								phases: {
 									install: {
-										commands: ["n 18", "cd cdk", "npm install"],
+										commands: ["n 16", "cd cdk", "npm install"],
 									},
 									build: {
 										commands: ["npm run build", "npm run cdk synth -- -o dist"],

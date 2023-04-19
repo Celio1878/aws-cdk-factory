@@ -1,6 +1,6 @@
 {
 	"name": "cdk-factory",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "AWS CDK Factory",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -24,9 +24,6 @@
 	"author": {
 		"name": "Celio Vieira",
 		"email": "celio1878@hotmail.com"
-	},
-	"engines": {
-		"node": ">=18.x"
 	},
 	"scripts": {
 		"test": "jest",
