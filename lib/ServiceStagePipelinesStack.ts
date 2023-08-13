@@ -8,7 +8,7 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 const ASSETS_BUCKET = "code-asset";
 const BUILD_ENV = {
 	computeType: codebuild.ComputeType.SMALL,
-	buildImage: codebuild.LinuxBuildImage.AMAZON_LINUX_2_4,
+	buildImage: codebuild.LinuxBuildImage.AMAZON_LINUX_2_5,
 };
 
 interface Props extends StackProps {
@@ -17,7 +17,7 @@ interface Props extends StackProps {
 	readonly prod_branch: string;
 	readonly service_name: string;
 	readonly build_env?: codebuild.BuildEnvironment;
-	readonly add_policies_to_build_role: (stack: Stack, role: iam.Role) => any;
+	readonly add_policies_to_build_role: (stack: Stack, role: iam.Role) => void;
 }
 
 /**
@@ -160,6 +160,6 @@ export class ServiceStagePipelinesStack extends Stack {
 	}
 
 	private sanitize_project_name(project_name: string): string {
-		return project_name.replace(/-/g, "_").replace(/ /g, "_");
+		return project_name.replace(/[ -]/g, "_");
 	}
 }
