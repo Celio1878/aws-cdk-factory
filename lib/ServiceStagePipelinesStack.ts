@@ -115,7 +115,7 @@ export class ServiceStagePipelinesStack extends Stack {
 								version: "0.2",
 								phases: {
 									install: {
-										commands: ["n 16", "cd cdk", "npm install"],
+										commands: ["cd cdk", "npm install"],
 									},
 									build: {
 										commands: ["npm run build", "npm run cdk synth -- -o dist"],
