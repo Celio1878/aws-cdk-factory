@@ -82,7 +82,7 @@ class StackCommonLambdaResources {
 	}
 
 	private get_insisights_layer(stack: Stack) {
-		const layerArn = `arn:aws:lambda:sa-east-1:580247275435:layer:LambdaInsightsExtension:14`;
+		const layerArn = `arn:aws:lambda:sa-east-1:580247275435:layer:LambdaInsightsExtension:18`;
 
 		return lambda.LayerVersion.fromLayerVersionArn(stack, `LayerFromArn`, layerArn);
 	}
@@ -101,7 +101,7 @@ class StackCommonLambdaResources {
 		const layer = StackCommonLambdaResources.cache.get(this.stack_id)?.insights_layer;
 
 		if (!layer) {
-			throw new Error("nao achou layer no cache");
+			throw new Error("Layer not found in the cache" + this.stack_id);
 		}
 
 		return layer;

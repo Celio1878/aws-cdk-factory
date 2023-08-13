@@ -11,12 +11,14 @@ import * as ssm from "aws-cdk-lib/aws-ssm";
  * @returns
  */
 export function ServiceVars(stack: Stack, service_name: string) {
-	const add_string_param = (name: string, value: string) => {
-		new ssm.StringParameter(stack, parameter_id(name), {
+	function add_string_param(name: string, value: string) {
+		const ssm_parameter = new ssm.StringParameter(stack, parameter_id(name), {
 			parameterName: parameter_name(service_name, name),
 			stringValue: value,
 		});
-	};
+
+		return ssm_parameter;
+	}
 
 	return {
 		StringParam: add_string_param,
@@ -24,18 +26,21 @@ export function ServiceVars(stack: Stack, service_name: string) {
 		 * Add the endpoint of the api to SSM.
 		 * @param api
 		 */
-		ApiUrl: (api: apigateway.LambdaRestApi) => {
-			add_string_param("api", `${api.url}${service_name}`);
-		},
+		ApiUrl: (api: apigateway.LambdaRestApi) => add_string_param("api", `${api.url}${service_name}`),
 	};
 }
 
-function parameter_id(id: string) {
-	return id.replace(/ /g, "").replace(/-/g, "").replace(/_/g, "");
+function parameter_id(id: string): string {
+	const sanitized_name = id.replace(/[ -_]/g, "");
+
+	return sanitized_name;
 }
 
-function parameter_name(service_name: string, parameter_name: string) {
-	const name = `${service_name}_${parameter_name}`.trim().toUpperCase().replace(/-/g, "_");
+function parameter_name(service_name: string, parameter_name: string): string {
+	const sanitized_parameter_name = `${service_name}_${parameter_name}`
+		.trim()
+		.toUpperCase()
+		.replace(/-/g, "_");
 
-	return `/output/${service_name}/${name}`;
+	return `/output/${service_name}/${sanitized_parameter_name}`;
 }

@@ -1,6 +1,6 @@
 {
 	"name": "cdk-factory",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "AWS CDK Factory",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -33,19 +33,19 @@
 		"find-deadcode": "ts-prune"
 	},
 	"devDependencies": {
-		"@types/jest": "^29.5.0",
-		"@types/node": "^18.15.11",
+		"@types/jest": "^29.5.3",
+		"@types/node": "^20.4.10",
 		"@types/source-map-support": "^0.5.6",
-		"aws-cdk": "2.75.0",
-		"jest": "^29.5.0",
-		"ts-jest": "^29.1.0",
+		"aws-cdk": "2.91.0",
+		"jest": "^29.6.2",
+		"ts-jest": "^29.1.1",
 		"ts-node": "^10.9.1",
 		"ts-prune": "^0.10.3",
-		"typescript": "^5.0.4"
+		"typescript": "^5.1.6"
 	},
 	"dependencies": {
-		"aws-cdk-lib": "2.75.0",
-		"constructs": "^10.2.0",
+		"aws-cdk-lib": "2.91.0",
+		"constructs": "^10.2.69",
 		"source-map-support": "^0.5.21"
 	}
 }
